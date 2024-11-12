@@ -1,9 +1,9 @@
 Name:	jitterentropy
-Version:	3.4.1
-Release:	2%{?dist}
+Version:	3.5.0
+Release:	1%{?dist}
 Summary:	Library implementing the jitter entropy source
 
-License:	BSD or GPLv2
+License:	BSD-3-Clause OR GPL-2.0-only
 URL:		https://github.com/smuellerDD/jitterentropy-library
 Source0:	%{url}/archive/v%{version}/%{name}-library-%{version}.tar.gz
 
@@ -45,6 +45,10 @@ mkdir -p %{buildroot}/usr/include/
 %{_mandir}/man3/*
 
 %changelog
+* Wed Feb 07 2024 Vladis Dronov <vdronov@redhat.com> - 3.5.0-1
+- Update to the upstream v3.5.0 @ b178ef6b (RHEL-30957)
+- Use proper SPDX license identifiers
+
 * Tue Dec 27 2022 Vladis Dronov <vdronov@redhat.com> - 3.4.1-2
 - Update to the upstream v3.4.1 @ 7bf9f85d (bz 2140043)
 - Fix a stack corruption on s390x
