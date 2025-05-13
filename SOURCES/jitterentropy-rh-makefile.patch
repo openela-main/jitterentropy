@@ -10,7 +10,7 @@ diff -up Makefile.orig Makefile
  LDFLAGS +=-Wl,-z,relro,-z,now -lpthread
  
  # Enable internal timer support
-@@ -28,7 +28,7 @@ LIBDIR := lib
+@@ -34,7 +34,7 @@ LIBDIR := lib
  INCDIR := include
  SRCDIR := src
  
@@ -18,8 +18,8 @@ diff -up Makefile.orig Makefile
 +INSTALL ?= install
  
  NAME := jitterentropy
- LIBMAJOR=$(shell cat $(SRCDIR)/jitterentropy-base.c | grep define | grep MAJVERSION | awk '{print $$3}')
-@@ -73,25 +73,25 @@ cppcheck:
+ LIBMAJOR=$(shell cat jitterentropy.h | egrep "define\s+JENT_MAJVERSION" | awk '{print $$3}')
+@@ -83,25 +83,25 @@ cppcheck:
  install: install-man install-shared install-includes
  
  install-man:
